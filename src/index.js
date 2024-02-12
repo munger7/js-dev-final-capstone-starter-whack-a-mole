@@ -10,6 +10,8 @@ let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "hard";
+const audioHit = new Audio("https:github.com/munger7/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/hit.mp3?raw=true");
+const song = new Audio();
 
 /**
  * Generates a random integer within a range.
@@ -234,6 +236,8 @@ function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
   updateScore();
+  // make hit noise
+  audioHit.play();
   // return points
   return points;
 }
