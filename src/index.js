@@ -63,9 +63,18 @@ function setDelay(difficulty) {
 function chooseHole(holes) {
   // TODO: Write your code here.
   // 1. Generate a random integer from 0 to 8 and assign it to an index variable.
+  let lastHole = null;
+  let i = randomInteger(0, 8);
    // 2. Get a random hole with the random index (e.g., const hole = holes[index]).
+  const hole = holes[i];
    // 3. if hole === lastHole, then call chooseHole(holes) again because you don't want to return the same hole.
-   // 4. if hole is not the same as the lastHole, then keep track of it (lastHole = hole) and return the hole.
+   if (hole === lastHole) {
+    return chooseHole(holes);
+   } else {
+    // 4. if hole is not the same as the lastHole, then keep track of it (lastHole = hole) and return the hole.
+    lastHole = hole;
+    return hole;
+   }   
 }
 
 /**
