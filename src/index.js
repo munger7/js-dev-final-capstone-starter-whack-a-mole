@@ -48,8 +48,8 @@ function randomInteger(min, max) {
 function setDelay(difficulty) {
   // TODO: Write your code here.
   if(difficulty === "easy") return 1500;
-  else if (difficulty === "normal") return 1000;
-  else return randomInteger(600, 1200);  
+  else if (difficulty === "normal") return 1250;
+  else return randomInteger(800, 1300);  
 }
 
 /**
@@ -293,6 +293,8 @@ function startGame(){
   startTimer();
   showUp();
   setEventListeners();
+  // set score to zero
+  clearScore();
   // plays start-up sound
   audioStart.play();
   // plays game song
