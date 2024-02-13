@@ -10,8 +10,10 @@ let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "hard";
-const audioHit = new Audio("https:github.com/munger7/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/hit.mp3?raw=true");
-const song = new Audio();
+const audioHit = new Audio("https://github.com/munger7/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/hit.mp3?raw=true");
+const audioStart = new Audio("https://github.com/munger7/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/draw-sword1-44724.mp3?raw=true")
+const song = new Audio("https://github.com/munger7/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/heroic-intro-21468.mp3?raw=true");
+
 
 /**
  * Generates a random integer within a range.
@@ -288,7 +290,9 @@ function startGame(){
   setDuration(10);
   startTimer();
   showUp();
-  setEventListeners()
+  setEventListeners();
+  audioStart.play();
+  song.play();
   return "game started";
 }
 
