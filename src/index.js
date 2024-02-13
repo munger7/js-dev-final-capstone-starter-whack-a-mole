@@ -10,6 +10,8 @@ let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "hard";
+
+// Adding audio files 
 const audioHit = new Audio("https://github.com/munger7/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/hit.mp3?raw=true");
 const audioStart = new Audio("https://github.com/munger7/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/draw-sword1-44724.mp3?raw=true")
 const song = new Audio("https://github.com/munger7/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/heroic-intro-21468.mp3?raw=true");
@@ -291,7 +293,9 @@ function startGame(){
   startTimer();
   showUp();
   setEventListeners();
+  // plays start-up sound
   audioStart.play();
+  // plays game song
   song.play();
   return "game started";
 }
